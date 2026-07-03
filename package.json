@@ -40,6 +40,8 @@
     "*.{js,ts}": [
       "prettier --write",
       "eslint --max-warnings 0"
-    ]
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix"
   }
 }
