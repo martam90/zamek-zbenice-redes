@@ -1,0 +1,38 @@
+---
+import {addNbsp} from '../../utility/Text';
+
+---
+
+<details class="md:hidden group [&::-webkit-details-marker]:hidden" id="details-nav">
+    <summary class="flex flex-col px-2 cursor-pointer items-center justify-between" id="summary-nav">
+        <span class="uppercase text-sm">Menu</span>
+
+            <!-- icon open -->
+            <svg class="group-open:hidden cursor-pointer" width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="nav-open">
+                <path d="M4 17H20M4 12H20M4 7H20" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+        <!-- icon close -->
+        <svg class="hidden cursor-pointer group-open:block group-open:z-[100]" id="nav-close" fill="#000000" width="40px" height="40px" viewBox="0 0 24 24" data-name="Line Color" xmlns="http://www.w3.org/2000/svg"><line id="primary" x1="19" y1="19" x2="5" y2="5" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line><line id="primary-2" data-name="primary" x1="19" y1="5" x2="5" y2="19" style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line></svg>
+    </summary>
+
+
+    <nav aria-label="Hlavní navigace" id="nav" class="fixed top-0 right-0 h-screen w-80 bg-parchment-100 translate-x-full z-[99] group-open:translate-x-0 flex-col text-center justify-center items-center pt-28 pb-16 px-4">
+    <ul class="list-none flex flex-col gap-6">
+        <li class="mb-1.5"><a href="/#o-zamku" class="uppercase text-ink-900 focus:text-parchment-200 hover:text-parchment-200 transition-all">{addNbsp('O zámku')}</a></li>
+        <li class="mb-1.5"><a href="/#historie" class="uppercase text-ink-900 focus:text-parchment-200  hover:text-parchment-200 transition-all">Historie</a></li>
+        <li class="mb-1.5"><a href="/#galerie" class="uppercase text-ink-900 focus:text-parchment-200  hover:text-parchment-200 transition-all">Galerie</a></li>
+        <li class="mb-1.5"><a href="/#kontakt" class="uppercase text-ink-900 focus:text-parchment-200  hover:text-parchment-200 transition-all">Kontakt</a></li>
+    </ul>
+    </nav>
+    </details>
+
+    <!-- desktop nav -->
+    <nav aria-label="Hlavní navigace" class="hidden md:flex items-center justify-items">
+    <ul class="list-none flex gap-6">
+        <li class="mb-1.5"><a href="/#o-zamku" class="uppercase text-ink-900 focus:text-parchment-200  hover:text-parchment-200 transition-all">{addNbsp('O zámku')}</a></li>
+        <li class="mb-1.5"><a href="/#historie" class="uppercase text-ink-900 focus:text-parchment-200  hover:text-parchment-200 transition-all">Historie</a></li>
+        <li class="mb-1.5"><a href="/#galerie" class="uppercase text-ink-900 focus:text-parchment-200  hover:text-parchment-200 transition-all">Galerie</a></li>
+        <li class="mb-1.5"><a href="/#kontakt" class="uppercase text-ink-900 focus:text-parchment-200 hover:text-parchment-200 transition-all">Kontakt</a></li>
+    </ul>
+    </nav>

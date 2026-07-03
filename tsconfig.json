@@ -1,0 +1,34 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "include": ["src/**/*", "eslint.config.mjs"],
+  "exclude": ["dist"],
+
+  "compilerOptions": {
+    /** Base Options: **/
+    "module": "preserve" /* CommonJS module syntax */,
+    "noEmit": true,
+    "esModuleInterop": true /* Better CJS/ESM interop */,
+    "skipLibCheck": true /* Skip .d.ts checks */,
+    "target": "es2022" /* Uses 2022 JS version */,
+    "allowJs": true /* Allow .js imports */,
+    "resolveJsonModule": true /* Allow .json imports */,
+    "moduleDetection": "force" /* Treat all files as modules */,
+    "isolatedModules": true /* Single-file TS transforms */,
+    "verbatimModuleSyntax": true /* Keep import/export syntax */,
+
+    /** Strictness **/
+    "strict": true /* Enable strict checks */,
+    "noUncheckedIndexedAccess": true /* Index access can be undefined */,
+    "noImplicitOverride": true /* Require override keyword */,
+
+    /* If your code runs in the DOM: */
+    "lib": ["es2022", "dom", "dom.iterable"] /* DOM and iterable types */,
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ]
+  }
+}
+
+/* https://www.totaltypescript.com/tsconfig-cheat-sheet */

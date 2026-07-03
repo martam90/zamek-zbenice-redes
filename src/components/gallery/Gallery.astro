@@ -1,0 +1,70 @@
+---
+import { galleryData } from "../../data/gallery";
+import {addNbsp} from "../../utility/Text";
+import IconZoom from "../../../public/gallery/zoom.svg"
+import "lightgallery/css/lightgallery-bundle.css";
+
+const items = galleryData.map((item, index) => {
+  return {
+    alt: item.alt || '',
+    src: item.src || '',
+    itemClass: item.class || '',
+    delay: index * 120,
+  };
+});
+
+---
+
+<section class="py-10 md:py-14" aria-labelledby="gallery-title" id="galerie">
+    <div class="w-full max-w-[1190px] mx-auto">
+        <div class="px-4">
+            <div class="uppercase text-parchment-200 font-medium section-eyebrow" data-animate="fade-left"><p class="ml-8 sm:ml-14 tracking-wide text-sm md:text-base" data-animate="fade-left">Místo, kde se zastavil čas</p></div>
+
+            <div>
+                <h2 class="text-ink-900 font-bold my-4 md:my-8" id="gallery-title" data-animate="fade-left">
+                    {addNbsp('Nahlédněte do atmosféry Zbenic')}
+                </h2>
+
+                <div class="flex flex-col gap-4">
+                    <p class="mb-4" data-animate="fade-left">{addNbsp('V naší sbírce najdete přibližně 200 let staré kousky, mimo jiné první vydání Dějin Českého národa od Františka Palackého nebo kojeneckou lahvičku z 19. století.')}</p>
+
+                    <ul class="grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] gap-2 grid-flow-dense" id="lightgallery">
+                        {items.map(({ alt, src, itemClass, delay }) => {
+
+                            return (
+                                <li style={`--transition-delay: ${delay}ms`} class={`${itemClass} group relative before:content-[''] before:absolute before:inset-0 before:w-full before:h-full before:bg-parchment-200/30 hover:before:bg-parchment-200/0 before:z-0 before:cursor-pointer before:transition-all before:pointer-events-none`} data-animate="fade-left">
+                                    <a class="h-full w-full" href={`/gallery/full/${src}`}>
+                                        <img class="h-full w-full object-cover" src={`/gallery/thumbs/${src}`} alt={alt}/>
+                                        <IconZoom class="absolute bottom-5 right-5 group-hover:opacity-0 transition-opacity"/>
+                                    </a>
+                                </li>
+                            )
+                        })}
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import lightGallery from 'lightgallery';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
+const galleryElem = document.getElementById('lightgallery') as HTMLElement;
+
+const GalleryInit = () => {
+  if (galleryElem) {
+    lightGallery(galleryElem, {
+      plugins: [lgZoom, lgThumbnail],
+      selector: 'a',
+      galleryId: 'castle',
+      thumbnail: true,
+      mode: 'lg-fade',
+      download: false,
+    });
+  }
+};
+
+GalleryInit();
+</script>

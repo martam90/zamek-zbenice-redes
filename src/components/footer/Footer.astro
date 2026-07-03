@@ -1,0 +1,56 @@
+---
+import {Image} from 'astro:assets';
+import {addNbsp} from '../../utility/Text';
+import logo from '../../assets/footer/logo.svg';
+const date = new Date();
+const fullYear = date.getFullYear();
+---
+
+
+<footer class="px-4 py-8 lg:py-16 bg-ink-900 text-parchment-100">
+  <div class="w-full max-w-[1190px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+    <div class="text-parchment-100 md:col-span-2 lg:col-span-1">
+      <a href="/" aria-label="Zámek Zbenice - domovská stránka" class="inline-block mb-2">
+        <Image src={logo} width={80} height={80} alt="Zámek Zbenice - domovská stránka Zbenice" />
+      </a>
+      <p class="max-w-80">{addNbsp('Renesanční sídlo s historií sahající do roku 1293. Dnes restaurátorská dílna a místo kulturních setkání.')}</p>
+    </div>
+
+    <div>
+      <h3 class="uppercase text-parchment-100 font-semibold mb-4">Navigace</h3>
+      <nav aria-label="Navigace v patičce">
+        <ul class="list-none">
+          <li class="mb-1.5"><a href="/#o-zamku" class="hover:text-white">{addNbsp('O zámku')}</a></li>
+          <li class="mb-1.5"><a href="/#historie" class="hover:text-white">Historie</a></li>
+          <li class="mb-1.5"><a href="/#galerie" class="hover:text-white">Galerie</a></li>
+          <li class="mb-1.5"><a href="/#kontakt" class="hover:text-white">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+
+      <div>
+        <h3 class="uppercase text-parchment-100 font-semibold mb-4">Kontakt</h3>
+        <address class="not-italic mb-2.5">
+          <p>Zámek Zbenice</p>
+          <p>262 31 Zbenice</p>
+        </address>
+        <a href="tel:+420603542878" class="hover:text-white">+420 603 542 878</a><br>
+        <a href="mailto:jiriceska@seznam.cz" class="hover:text-white">jiriceska@seznam.cz</a>
+        <p class="text-parchment-100 mt-2.5">
+          {addNbsp('Po – Pá: 10:00 – 18:00')}<br/>
+          Vstupné dobrovolné
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <div class="container mx-auto bg-overlay-300 w-screen h-px mt-8"></div>
+
+    <div>
+
+      <div class="container mx-auto mt-4 text-parchment-100 text-sm">
+        <p>&copy; {fullYear} Zámek Zbenice. Všechna práva vyhrazena.</p>
+      </div>
+    </div>
+</footer>

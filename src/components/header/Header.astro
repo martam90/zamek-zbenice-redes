@@ -1,0 +1,29 @@
+---
+import {Image} from 'astro:assets';
+import hero from '../../assets/header/hero.webp';
+import logo from '../../assets/header/logo.svg';
+
+import Navigation from '../navigation/Navigation.astro';
+import Hero from '../hero/Hero.astro';
+
+---
+
+<header
+  class="relative bg-cover bg-center bg-no-repeat py-4 before:content-[''] before:absolute before:inset-0 before:z-0 hero-overlay"
+  style={`background-image: url("${hero.src}")`}
+>
+  <div class="w-full max-w-[1190px] mx-auto px-4 flex justify-between items-center md:grid md:grid-cols-[1fr_auto_1fr] relative z-10">
+
+      <a href="/" aria-label="Zámek Zbenice - domovská stránka" class="block w-fit">
+        <Image src={logo} width={80} height={80} alt="Logo Zámek Zbenice" />
+      </a>
+
+      <Navigation />
+
+  </div>
+
+  <Hero />
+
+</header>
+
+<script src="./script.ts"></script>

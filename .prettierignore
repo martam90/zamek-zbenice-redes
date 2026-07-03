@@ -1,0 +1,11 @@
+# Ignore artifacts:
+dist
+.astro
+.fallow
+
+# Standard
+**/.git
+**/node_modules
+
+# lockfiles
+package-lock.json

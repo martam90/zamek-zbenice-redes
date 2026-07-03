@@ -1,0 +1,50 @@
+---
+import {addNbsp} from '../../utility/Text';
+import PinIco from '../../assets/contact/pin-ico.svg';
+import PhoneIco from '../../assets/contact/phone-ico.svg';
+import MailIco from '../../assets/contact/email-ico.svg';
+import ClockIco from '../../assets/contact/clock-ico.svg';
+---
+
+<section class="py-10 md:py-14" aria-labelledby="contact-title" id="kontakt">
+    <div class="w-full max-w-[1190px] mx-auto">
+        <div class="px-4">
+            <div class="uppercase text-parchment-200 font-medium section-eyebrow" data-animate="fade-left"><p class="ml-8 sm:ml-14 tracking-wide text-sm md:text-base" data-animate="fade-left">Kontakt</p></div>
+
+
+            <div class="flex flex-col gap-8 md:flex-row md:justify-between">
+                <div>
+                    <h2 class="text-ink-900 font-bold my-4 md:my-8" id="contact-title" data-animate="fade-left">
+                    {addNbsp('Najdete nás v srdci')}<br> {addNbsp('středních Čech')}</h2>
+                <ul>
+                    <li class="mb-4 flex items-center" data-animate="fade-left">
+                        <PinIco class="inline-block mr-3" aria-hidden="true"/>
+                        {addNbsp('Zámek Zbenice, 262 31 Zbenice')}
+                    </li>
+                    <li class="mb-4 flex items-center" data-animate="fade-left">
+                        <PhoneIco class="inline-block mr-3" aria-hidden="true"/>
+                        <a href="tel:+420603542878" aria-label="Telefon: +420 603 542 878" class="hover:underline focus:underline">
+                        {addNbsp('+420 603 542 878')}
+                        </a>
+                    </li>
+                    <li class="mb-4 flex items-center" data-animate="fade-left">
+                        <MailIco class="inline-block mr-3" aria-hidden="true"/>
+                        <a href="mailto:jiriceska@seznam.cz" aria-label="E-mail: jiriceska@seznam.cz" class="hover:underline focus:underline">
+                            jiriceska@seznam.cz
+                        </a>
+                    </li>
+                    <li class="mb-4 flex items-center" data-animate="fade-left">
+                        <ClockIco class="inline-block mr-3" aria-hidden="true"/>
+                        {addNbsp('Po – Pá: 10:00 – 18:00')}<br>
+                        Vstupné dobrovolné
+                    </li>
+                </ul>
+                </div>
+
+
+                <iframe style="border:none" src="https://mapy.com/s/mekahutaru" width="700" height="400" class="block max-w-full" data-animate="fade-left" title="Mapa Zbenice"></iframe>
+            </div>
+
+        </div>
+    </div>
+</section>

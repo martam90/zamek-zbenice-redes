@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import aboutImg from '../../assets/about/ceska.webp';
+import IcoSignature from '../../assets/about/signature.svg';
+import {addNbsp} from '../../utility/Text';
+---
+
+<section class="px-4 py-10 md:py-14 bg-ink-900 text-parchment-50" aria-label="Slovo majitele">
+  <div class="w-full max-w-[1190px] mx-auto">
+    <div class="flex flex-col gap-4">
+
+      <div class="mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <Image src={aboutImg} alt="Jiří Češka" class="rounded-full" data-animate="fade-left"/>
+        <div class="w-full max-w-2xl max-lg:text-center">
+          <blockquote class="italic lg:text-xl" data-animate="fade-left">
+            {addNbsp('„Zámek Zbenice pro mě není jen nemovitost — je to závazek. Závazek vůči místu, které přežilo sedm set let, a vůči příštím generacím. Každý opravený kámen je malé vítězství.“')}
+          </blockquote>
+          <div class="flex flex-col md:flex-row justify-between mt-4 font-bold" data-animate="fade-left">
+
+            <span class="uppercase">Jiří Češka
+              <br>
+              <span class="lowercase">{addNbsp('majitel zámku')}</span>
+            </span>
+
+            <span class="flex justify-center md:justify-start"><IcoSignature /></span>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>

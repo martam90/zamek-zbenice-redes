@@ -1,0 +1,25 @@
+---
+import Header from '../components/header/Header.astro';
+import Footer from '../components/footer/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import SkipToContent from '../components/skip-to-content/SkipToContent.astro';
+import Gallery from '../components/gallery/Gallery.astro';
+import About from '../components/about/About.astro';
+import Promo from '../components/promo/Promo.astro';
+import Timeline from '../components/timeline/Timeline.astro';
+import Contact from '../components/contact/Contact.astro';
+
+---
+
+<Layout>
+	<SkipToContent />
+	<Header/>
+	<main id="main-content" class="flex flex-col grow basis auto min-h-full">
+		<Promo />
+		<About />
+		<Gallery />
+		<Timeline />
+		<Contact />
+	</main>
+	<Footer />
+</Layout>
