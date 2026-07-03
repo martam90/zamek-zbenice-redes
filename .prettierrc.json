@@ -5,13 +5,12 @@
   "singleQuote": true,
   "useTabs": true,
   "bracketSpacing": true,
-  "objectwrap": "collapse",
   "bracketSameLine": false,
   "arrowParens": "always",
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "overrides": [
     {
-      "files": ["**/**/*.astro"],
+      "files": ["**/*.astro"],
       "options": {
         "parser": "astro"
       }

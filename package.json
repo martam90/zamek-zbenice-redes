@@ -31,17 +31,17 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
     "prettier": "^3.9.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "stylelint": "^17.14.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-config-tailwindcss": "^1.0.1",
     "typescript-eslint": "^8.62.1"
   },
   "lint-staged": {
-    "*.{js,ts}": [
+    "*.{js,ts,astro}": [
       "prettier --write",
       "eslint --max-warnings 0"
-    ],
-    "*.js": "eslint --cache --fix",
-    "*.css": "stylelint --fix"
+    ]
   }
 }
