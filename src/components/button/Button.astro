@@ -1,11 +1,16 @@
 ---
 import {addNbsp} from '../../utility/Text';
-const {title, href, variant} = Astro.props;
-const btnClass = variant === 'primary' ? 'bg-ink-900 text-white' : 'bg-transparent text-ink-900 border border-ink-900 hover:border-transparent focus:border-transparent';
 
+interface Props {
+  title: string;
+  href: string;
+  btnClass?: string;
+}
+
+const { title, href, btnClass = '' } = Astro.props as Props;
 ---
 
-<a href={href} type={variant} class={`w-fit group relative overflow-hidden overflow-x-hidden ${btnClass} px-6 py-2 flex items-center gap-2 focus-visible:outline-offset-4`}><span class="font-base md:font-lg uppercase font-medium">
+<a href={href} class={`w-fit group relative overflow-hidden overflow-x-hidden ${btnClass} px-6 py-2 flex items-center gap-2 focus-visible:outline-offset-4`}><span class="font-base md:font-lg uppercase font-medium">
   {addNbsp(title)}
 </span>
 <span class="ml-1 transition group-hover:translate-x-1">

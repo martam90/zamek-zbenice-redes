@@ -45,7 +45,7 @@
     --transition-delay: 0ms;
 
     opacity: 0;
-    transform: none;
+    transform: translateX(-15px);
     transition:
       opacity 1s ease 0ms,
       transform 1s ease 0ms;
@@ -59,7 +59,7 @@
 
   [data-animate='fade-left'].animated {
     opacity: 1;
-    transform: translateX(-4px);
+    transform: translateX(0);
     transition-delay: var(--transition-delay);
   }
 
@@ -87,7 +87,8 @@
     animation: write 3s linear both;
 
     @media (prefers-reduced-motion: reduce) {
-      animation: none;
+      animation: none !important;
+      stroke-dashoffset: 0 !important;
     }
   }
 
