@@ -42,6 +42,10 @@
     "*.{js,ts,astro}": [
       "prettier --write",
       "eslint --max-warnings 0"
+    ],
+    "*{css}": [
+      "prettier --write",
+      "stylelint --fix"
     ]
   }
 }
